@@ -1,0 +1,1234 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #f2fcff;
+}
+
+.left-text {
+    z-index: 2000;
+    color: #f2fcff;
+    position: fixed;
+    left: 20px;
+    font-size: 20px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 48px;
+    color: #232b2b;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.btn-shine {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 12px;
+  color: #ffffff;
+  background: linear-gradient(to right, #232b2b 0, #f2fcff 10%, #4d4d4d 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  font-size: 80px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+    
+@keyframes shine{
+  0% {
+    background-position: 0;
+}
+  60% {
+    background-position: 1200px;
+}
+  100% {
+    background-position: 2800px;
+}
+}
+
+.navbar {
+    position: fixed;
+    top: 120px;
+    right: 40px;
+    width: 550px;
+    height: max-content;
+    border: 2px solid #6c8288; 
+    border-radius: 30px;
+    background-color: black;
+    transition: transform 0.3s ease;
+    transform: translateX(150%);
+    z-index: 1000;
+
+}
+
+.navbar ul {
+    list-style: none;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-decoration: none;
+}
+
+.navbar ul li:hover{
+    position: relative;
+    align-items: center;
+    background-color: #232b2b;
+    border-radius: 20px;
+    margin-right: 50px;
+    transform: translateX(10px);
+}
+
+.navbar ul a{
+    text-decoration: none;
+}
+
+.navbar ul a li {
+    font-weight: 500;
+    font-size: 45px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar ul a li.active {
+  color: #f2fcff;
+  pointer-events: none;
+  cursor: default;
+}
+
+.navbar ul a li.active:hover {
+  transform: none;
+  background-color: transparent;
+}
+ 
+.toggle-btn {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+    font-weight: 100;
+    transition: all 0.2s;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background: #232b2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: #f2fcff;
+    width: 150px;
+    border: none;
+    z-index: 1000;
+  }
+  
+  .toggle-btn > svg {
+    width: 34px;
+    margin-left: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .toggle-btn > span {
+    font-size: 27px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .toggle-btn:hover {
+    transform: scale(1.1);
+  }
+
+.toggle-btn.rotated svg {
+    transform: rotate(90deg);
+}
+
+.navbar.active {
+    transform: translateX(0);
+}
+
+.grid-container {
+  margin: 100vh auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 50px;
+  width: calc(100vw - 40px); 
+  height: calc(100vh - 40px); 
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.card1 {
+  background-image: url('slike/webdesign.png');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  -webkit-box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative; 
+  overflow: hidden;
+  height: 450px;
+  transition: transform 0.3s ease;
+}
+
+.card2 {
+  background-image: url('slike/webdevelopment.png');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  -webkit-box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative; 
+  overflow: hidden;
+  height: 450px;
+  transition: transform 0.3s ease;
+}
+
+.card3 {
+  background-image: url('slike/landingpage.png');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  -webkit-box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative; 
+  overflow: hidden;
+  height: 450px;
+  transition: transform 0.3s ease;
+}
+
+.card4 {
+  background-image: url('slike/wordpress.png');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  -webkit-box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative; 
+  overflow: hidden;
+  height: 450px;
+  transition: transform 0.3s ease;
+}
+
+.card5 {
+  background-image: url('slike/facebookinstagram.png');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  -webkit-box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative; 
+  overflow: hidden;
+  height: 450px;
+  transition: transform 0.3s ease;
+}
+
+.card6 {
+  background-image: url('slike/odrzavanjesajtova.png');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  -webkit-box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative; 
+  overflow: hidden;
+  height: 450px;
+  transition: transform 0.3s ease;
+}
+
+.card1:hover {
+  transform: scale(1.03);
+}
+
+.card2:hover {
+  transform: scale(1.03);
+}
+
+.card3:hover {
+  transform: scale(1.03);
+}
+
+.card4:hover {
+  transform: scale(1.03);
+}
+
+.card5:hover {
+  transform: scale(1.03);
+}
+
+.card6:hover {
+  transform: scale(1.03);
+}
+
+.card1-content, .card2-content, .card3-content, .card4-content, .card5-content, .card6-content {
+  position: absolute; 
+  justify-content: end;
+  align-items: flex-end; 
+}
+
+.card1 h2, .card2 h2, .card3 h2, .card4 h2, .card5 h2, .card6 h2 {
+  text-shadow: -2px 1px 11px rgba(35,43,43,0.66);
+  color: #f2fcff;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  margin: 0;
+  font-size: 1.5em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+  --bg: #000000;
+  --clr-1: #62b2ca;
+  --clr-2: #8bb39c;
+  --clr-3: #c5b389;
+  --clr-4: #bb94c2;
+
+  --blur: 1rem;
+  --fs: clamp(3rem, 8vw, 7rem);
+  --ls: clamp(-1.75px, -0.25vw, -3.5px);
+}
+
+body {
+  display: grid;
+  text-align: left;
+  background-color: var(--bg);
+  color: #f2fcff;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.content {
+  text-align: left;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  top: 450px;
+  height: 100px;
+  width: 100%;
+}
+
+.title {
+  font-size: var(--fs);
+  font-weight: 700;
+  letter-spacing: var(--ls);
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  margin-left: 50px;
+  margin-right: 10px;
+}
+
+.aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  mix-blend-mode: darken;
+  pointer-events: none;
+}
+
+.aurora__item {
+  overflow: hidden;
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  background-color: var(--clr-1);
+  border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  filter: blur(var(--blur));
+  mix-blend-mode: overlay;
+}
+
+.aurora__item:nth-of-type(1) {
+  top: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-1 12s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(2) {
+  background-color: var(--clr-3);
+  right: 0;
+  top: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-2 12s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(3) {
+  background-color: var(--clr-2);
+  left: 0;
+  bottom: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-3 8s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(4) {
+  background-color: var(--clr-4);
+  right: 0;
+  bottom: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-4 24s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-1 {
+  0% {
+    top: 0;
+    right: 0;
+  }
+
+  50% {
+    top: 100%;
+    right: 75%;
+  }
+
+  75% {
+    top: 100%;
+    right: 25%;
+  }
+
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+
+@keyframes aurora-2 {
+  0% {
+    top: -50%;
+    left: 0%;
+  }
+
+  60% {
+    top: 100%;
+    left: 75%;
+  }
+
+  85% {
+    top: 100%;
+    left: 25%;
+  }
+
+  100% {
+    top: -50%;
+    left: 0%;
+  }
+}
+
+@keyframes aurora-3 {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+
+  40% {
+    bottom: 100%;
+    left: 75%;
+  }
+
+  65% {
+    bottom: 40%;
+    left: 50%;
+  }
+
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@keyframes aurora-4 {
+  0% {
+    bottom: -50%;
+    right: 0;
+  }
+
+  50% {
+    bottom: 0%;
+    right: 40%;
+  }
+
+  90% {
+    bottom: 50%;
+    right: 25%;
+  }
+
+  100% {
+    bottom: -50%;
+    right: 0;
+  }
+}
+
+@keyframes aurora-border {
+  0% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+
+  25% {
+    border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+  }
+
+  50% {
+    border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+  }
+
+  75% {
+    border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+  }
+
+  100% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+}
+
+.div-kartica{
+  width: 100%;
+  height: 800px;
+  background-color: #0000;
+  position: absolute;
+  top: 3200px;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.kartica{
+  height: 750px;
+  width: 85%;
+  border-radius: 50px;
+  background-color: #f2fcff;
+  -webkit-box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 37px -12px rgba(0,0,0,0.75);
+}
+
+h3{
+  color: black;
+  margin-left: 80px;
+  margin-top: 80px;
+  font-size: 90px;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.dugme1{
+  margin-left: 80px;
+  width: 100px;
+  height: 30px;
+  background-color: #eaf2f5;
+  color: #232b2b;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dugme2{
+  margin-left: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: #eaf2f5;
+  color: #232b2b;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dugme3{
+  margin-left: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: #eaf2f5;
+  color: #232b2b;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dugme4{
+  margin-left: 20px;
+  width: 150px;
+  height: 30px;
+  background-color: #eaf2f5;
+  color: #232b2b;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dugme5{
+  margin-left: 20px;
+  width: 150px;
+  height: 30px;
+  background-color: #eaf2f5;
+  color: #232b2b;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dugme1:hover, .dugme2:hover, .dugme3:hover, .dugme4:hover, .dugme5:hover, .dugme6:hover{
+  transform: scale(0.97);
+}
+
+.p-kartica{
+  color: #000000;
+  width: 1000px;
+  font-weight: 600;
+  font-size: 50px;
+  margin-left: 80px;
+  margin-top: 30px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.div-kartica2{
+  width: 100%;
+  height: 800px;
+  background-color: #0000;
+  position: absolute;
+  top: 4100px;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.kartica2 {
+  height: 750px;
+  width: 85%;
+  border-radius: 50px;
+  background-color: black;
+  -webkit-box-shadow: inset 0px 0px 37px -12px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: inset 0px 0px 37px -12px rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0px 0px 37px -12px rgba(255, 255, 255, 0.75);
+  position: relative;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  flex-direction: column; 
+}
+
+.designforge{
+  font-size: 150px;
+  margin-left: 0;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: moveUpDown 5s linear infinite;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  33.3% {
+    transform: translateY(-10px); 
+  }
+  66.6%{
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0); 
+  }
+}
+
+.p-kartica2{
+  color: #f2fcff;
+  width: 1000px;
+  font-weight: 200;
+  font-size: 90px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.dugme6 {
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 150px;
+  background: #232b2b;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  color: #f2fcff;
+  height: 60px;
+  width: 190px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.dugme6 > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.1s ease-in-out;
+}
+
+.dugme6:hover svg {
+  transform: translateX(5px);
+}
+
+.dugme6:active {
+  transform: scale(0.95);
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: #f2fcff;
+  align-items: center;
+}
+
+.button:hover .svgIcon {
+  /* width: 20px; */
+  transition-duration: 0.3s;
+  transform: translateY(-200%);
+}
+
+.button::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Nazad na vrh";
+  color: #232b2b;
+  /* transition-duration: .3s; */
+  font-size: 0px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+  /* transform: translateY(-30px); */
+  transition-duration: 0.3s;
+}
+
+
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  height: 150px; /* Footer height set to 100px */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 75%;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  flex-grow: 1;
+}
+
+
+.footer-logo h2 {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.footer-logo p {
+  font-size: 12px;
+  color: #bbb;
+  margin-top: 5px;
+}
+
+
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social li {
+  margin: 0;
+}
+
+.footer-social a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-social a:hover {
+  text-decoration: underline;
+}
+
+
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  color: #bbb;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(12, auto);
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .card1 {
+    padding: 15px;
+  }
+
+  .card h2 {
+    font-size: 1.2em;
+  }
+
+  .card p {
+    font-size: 0.9em;
+  }
+
+  .content {
+    position: absolute;
+    top: 3800px;
+    margin-left: 50px;
+  }
+}
+
+@media (max-width:480px){
+
+  .toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-weight: 200;
+    transition: all 0.2s;
+    padding: 5px 15px;
+    border-radius: 90px;
+    background: #232b2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    color: #f2fcff;
+    width: 140px;
+    border: none;
+    z-index: 1000;
+  }
+  
+  .toggle-btn > svg {
+    width: 24px;
+    margin-left: 5px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .toggle-btn > span {
+    font-size: 17px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .left-text {
+    position: fixed;
+    top: 15px;
+    left: 10px;
+    font-size: 10px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    width: 350px;
+    height: max-content;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    transform: translateX(150%);
+    z-index: 1000;
+  }
+
+  .navbar ul a li {
+    font-weight: 500;
+    font-size: 30px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+  .btn-shine {
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  @keyframes shine{
+    0% {
+      background-position: 0;
+  }
+    60% {
+      background-position: 300px;
+  }
+    100% {
+      background-position: 300px;
+  }
+  }
+
+  .grid-container {
+    margin: 120vh auto 0;
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(12, auto);
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .card1, .card2, .card3, .card4, .card5, .card6 {
+    padding: 15px;
+  }
+
+  .card1 h2, .card2 h2, .card3 h2, .card4 h2, .card5 h2, .card6 h2 {
+    font-size: 1.2em;
+  }
+
+.content {
+  position: absolute;
+  top: 3860px;
+  margin: 0;
+}
+
+.title{
+  margin-left: 10px;
+}
+
+.card4{
+  background-image: url('slike/wordpress1.png');
+}
+
+.card1{
+  background-image: url('slike/webdesign1.png');
+}
+
+.card2{
+  background-image: url('slike/webdevelopment1.png');
+}
+
+.card3{
+  background-image: url('slike/landingpage1.png');
+}
+
+.card6{
+  background-image: url('slike/odrzavanjesajtova1.png');
+}
+
+.div-kartica{
+  width: 100%;
+  height: 500px;
+  background-color: #0000;
+  position: absolute;
+  top: 4400px;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.kartica {
+  height: 480px;
+  width: 95%;
+  border-radius: 30px;
+}
+
+h3 {
+  font-size: 40px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.dugme1, .dugme2, .dugme3, .dugme4, .dugme5 {
+  width: 80px;
+  height: 30px;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.dugme4, .dugme5 {
+  width: 120px;
+}
+
+.p-kartica {
+  font-size: 25px;
+  width: 90%;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.div-kartica2{
+  top: 4900px;
+}
+
+.kartica2 {
+  width: 95%; 
+  height: 450px; 
+  border-radius: 30px;
+}
+
+.designforge {
+  font-size: 50px; 
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.p-kartica2 {
+  width: 90%; 
+  font-size: 40px; 
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+}
+
+.svgIcon {
+  width: 10px;
+}
+
+footer {
+  height: 300px;
+  width: 100%;
+  padding: 15px 10px;
+  margin: 0;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.footer-container {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+
+.footer-logo h2 {
+  font-size: 18px;
+}
+
+.footer-logo p {
+  font-size: 10px;
+}
+
+.footer-social ul {
+  gap: 10px;
+}
+
+.footer-social a {
+  font-size: 12px;
+}
+
+.footer-bottom {
+  font-size: 10px;
+}
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
+  .btn-shine {
+    font-size: 50px;
+  }
+
+  .div-kartica {
+    height: 600px;
+    top: 4300px;
+  }
+
+  .kartica {
+    height: 550px;
+    width: 90%;
+    border-radius: 50px;
+  }
+
+  h3 {
+    font-size: 60px;
+    margin-left: 40px;
+    margin-top: 40px;
+  }
+
+  .dugme1, .dugme2, .dugme3, .dugme4, .dugme5 {
+    width: 90px;
+    height: 28px;
+    font-size: 14px;
+    margin-left: 15px;
+    border-radius: 15px;
+  }
+
+  .dugme4, .dugme5 {
+    width: 150px;
+  }
+
+  .p-kartica {
+    font-size: 35px;
+    width: 85%;
+    margin-left: 40px;
+    margin-top: 20px;
+  }
+
+  .div-kartica2 {
+    height: 900px;
+    top: 5000px;
+  }
+
+  .kartica2 {
+    height: 650px;
+    width: 90%;
+    border-radius: 50px;
+  }
+
+  .dugme6{
+    margin-bottom: 30px;
+  }
+
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: #232b2b;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #f2fcff;
+  border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+  
+
+
+
+
